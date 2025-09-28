@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the dedicated and experienced professors at DNC School. Filter by level and subject to find the right educator.">
+    <title>Our Professors - DNC School</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="menu-overlay"></div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="DNC School Logo">
+                    <span>DNC School</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <div class="nav-menu-header">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="logo.png" alt="DNC School Logo">
+                            <span>DNC School</span>
+                        </a>
+                    </div>
+                    <button class="close-menu-btn" aria-label="Close navigation menu">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="professors.html" class="active">Professors</a></li>
+                    <li><a href="news.html">News & Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" class="btn btn-primary">Contact Us</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Open navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Meet Our Professors</h1>
+            <p>Dedicated educators shaping the future</p>
+        </div>
+    </section>
+
+    <!-- Educational Modules Section -->
+    <section class="modules-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Find Your Professor</h2>
+                <p>Search and filter to find the perfect teacher for your needs</p>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="search-section">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="professor-search" placeholder="Search professors by name, subject, or specialization...">
+                    <button type="button" id="clear-search" class="clear-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Filter Buttons -->
+            <div class="quick-filters">
+                <h3>Quick Filters</h3>
+                <div class="filter-buttons">
+                    <!-- Level Filters -->
+                    <div class="filter-category">
+                        <h4>By Level</h4>
+                        <div class="button-group">
+                            <button class="filter-btn active" data-type="level" data-value="all">
+                                <i class="fas fa-graduation-cap"></i> All Levels
+                            </button>
+                            <button class="filter-btn" data-type="level" data-value="primary">
+                                <i class="fas fa-child"></i> Primary
+                            </button>
+                            <button class="filter-btn" data-type="level" data-value="middle">
+                                <i class="fas fa-user-graduate"></i> Middle
+                            </button>
+                            <button class="filter-btn" data-type="level" data-value="high">
+                                <i class="fas fa-university"></i> High School
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Subject Filters -->
+                    <div class="filter-category">
+                        <h4>By Subject</h4>
+                        <div class="button-group subject-buttons">
+                            <button class="filter-btn active" data-type="subject" data-value="all">
+                                <i class="fas fa-books"></i> All Subjects
+                            </button>
+                            <button class="filter-btn" data-type="subject" data-value="Arabic Language">
+                                <i class="fas fa-language"></i> Arabic
+                            </button>
+                            <button class="filter-btn" data-type="subject" data-value="Mathematics">
+                                <i class="fas fa-calculator"></i> Math
+                            </button>
+                            <button class="filter-btn" data-type="subject" data-value="French Language">
+                                <i class="fas fa-flag"></i> French
+                            </button>
+                            <button class="filter-btn" data-type="subject" data-value="English Language">
+                                <i class="fas fa-globe"></i> English
+                            </button>
+                            <button class="filter-btn" data-type="subject" data-value="Physical Sciences">
+                                <i class="fas fa-flask"></i> Physics
+                            </button>
+                            <button class="filter-btn" data-type="subject" data-value="Natural Sciences">
+                                <i class="fas fa-leaf"></i> Biology
+                            </button>
+                            <button class="filter-btn" data-type="subject" data-value="Computer Science">
+                                <i class="fas fa-laptop-code"></i> IT
+                            </button>
+                            <button class="filter-btn" data-type="subject" data-value="Physical Education">
+                                <i class="fas fa-running"></i> Sports
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Year Filters -->
+                    <div class="filter-category" id="year-category" style="display: none;">
+                        <h4>By Year</h4>
+                        <div class="button-group" id="year-buttons">
+                            <!-- Year buttons will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Traditional Filters (Hidden by default) -->
+            <div class="traditional-filters" style="display: none;">
+                <button class="toggle-traditional-btn" id="toggle-traditional">
+                    <i class="fas fa-sliders-h"></i> Advanced Filters
+                </button>
+                <div class="filters" id="traditional-filter-section" style="display: none;">
+                    <div class="filter-group">
+                        <label for="level-filter">Education Level</label>
+                        <select id="level-filter">
+                            <option value="all">All Levels</option>
+                            <option value="primary">Primary School</option>
+                            <option value="middle">Middle School</option>
+                            <option value="high">High School</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="year-filter">Academic Year</label>
+                        <select id="year-filter" disabled>
+                            <option value="all">Select Level First</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="subject-filter">Subject</label>
+                        <select id="subject-filter" disabled>
+                            <option value="all">All Subjects</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="term-filter">Term</label>
+                        <select id="term-filter">
+                            <option value="1">First Term</option>
+                            <option value="2">Second Term</option>
+                            <option value="3">Third Term</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module Grid (Hidden by default) -->
+            <div class="module-grid" id="module-grid" style="display: none;">
+                <!-- Module cards will be dynamically inserted here -->
+            </div>
+            
+            <!-- Toggle Materials Button -->
+            <div class="materials-toggle" style="text-align: center; margin-bottom: 30px;">
+                <button class="btn btn-outline" id="toggle-materials">
+                    <i class="fas fa-book"></i> Show Educational Materials
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professors Section -->
+    <section class="professors-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Professors</h2>
+                <p>Meet our dedicated teaching staff - Filter by level and subject above to see specific professors</p>
+            </div>
+            
+            <!-- Quick Access Buttons -->
+            <div class="quick-access-buttons">
+                <button class="btn btn-primary" id="show-primary-btn">
+                    <i class="fas fa-users"></i> View All Primary Professors
+                </button>
+                <button class="btn btn-outline" id="show-all-btn">
+                    <i class="fas fa-user-tie"></i> View All Professors
+                </button>
+            </div>
+            
+            <div class="professor-grid" id="professor-grid">
+                <!-- Professor cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="DNC School Logo">
+                        <span>DNC School</span>
+                    </div>
+                    <p>Excellence in Education, Building Future Leaders</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="professors.html">Professors</a></li>
+                        <li><a href="news.html">News & Events</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Education Street, City, Country</li>
+                        <li><i class="fas fa-phone"></i> +213 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> info@dncschool.edu</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DNC School. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/professors.js" defer></script>
+</body>
+</html>
